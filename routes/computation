@@ -1,0 +1,22 @@
+var express = require('express');
+var router = express.Router();
+
+
+var num1=0;
+var num2=0;
+var num3=0;
+
+
+
+router.get('/', function(req, res, next) {
+var random=Math.random();
+ num1=Math.log2(random);
+ num2=Math.cosh(random);
+ num3=Math.floor(random);
+    res.send(`The random number is ${random}
+    <br>[Log2] applied to ${random} is ${num1}
+    <br>[cosh] applied to ${random} is ${num2}
+    <br>[floor] applied to ${random} is ${num3}`);
+});
+
+module.exports = router;
